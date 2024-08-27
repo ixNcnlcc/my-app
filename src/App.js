@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 function App() {
-  const [word, setWord] = useState('Hello');  // Initialize state with the word 'Hello'
+  const [image, setImage] = useState('https://upload.wikimedia.org/wikipedia/commons/e/ec/Persian_Cat_7_UK.jpg');  // Initialize state with the word 'Hello'
 
-  const toggleWord = () => {
+  const toggleImage = () => {
     // Use an if statement to toggle between the words 'Hello' and 'Goodbye'
-    if (word === 'Hello') {
-      setWord('Goodbye');
+    if (image === 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Persian_Cat_7_UK.jpg') {
+      setImage('https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg');
     } else {
-      setWord('Hello');
+      setImage('https://upload.wikimedia.org/wikipedia/commons/e/ec/Persian_Cat_7_UK.jpg');
     }
   };
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>{word}</h1>  {/* Display the current word */}
-      <button onClick={toggleWord}>Toggle Word</button>  {/* Button to toggle the word */}
+      {/* Display the current image */}
+      <img src={image} alt="Toggle" style={{ width: '50%', maxWidth: '500px' }} />
+      {/* Button to toggle the image */}
+      <div>
+        <button onClick={toggleImage} style={{ marginTop: '20px' }}>Toggle Image</button>
+      </div>
     </div>
   );
 }
