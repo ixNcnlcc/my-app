@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react';
 function App() {
+  const [word, setWord] = useState('Hello');  // Initialize state with the word 'Hello'
+
+  const toggleWord = () => {
+    // Use an if statement to toggle between the words 'Hello' and 'Goodbye'
+    if (word === 'Hello') {
+      setWord('Goodbye');
+    } else {
+      setWord('Hello');
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>{word}</h1>  {/* Display the current word */}
+      <button onClick={toggleWord}>Toggle Word</button>  {/* Button to toggle the word */}
     </div>
   );
 }
